@@ -1,0 +1,28 @@
+
+<ion-header>
+ 
+  <ion-toolbar color="primary">
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <ion-list>
+    <ion-list-header color= "tertiary">
+      <ion-label>Lista de usuarios aleatorios</ion-label>
+    </ion-list-header>
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'usuarios', item.id]"></ion-item>
+    <ion-button (click)="getUserList()" >Actualizar</ion-button>
+    <ion-item *ngFor= "let x of userList;let i=index" >
+      <ion-avatar>
+        <img [src]="x.picture.large">
+  
+      </ion-avatar>
+      <ion-label>
+        <h3>{{x.name.first}}.   {{x.name.last}}</h3>
+        <p>{{x.email}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
