@@ -1,20 +1,28 @@
 
 <ion-header>
  
-  <ion-toolbar color="primary">
+  <ion-toolbar color="dark">
+      <ion-button size = "small" fill ="clear" slot ="end"
+      shape= "round"
+      (click)="getUserList()" >
+        
+
+          <ion-icon slot="end" color="light" name="refresh"></ion-icon>
+      </ion-button>
     <ion-title>Usuarios</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    
+  
   <ion-list>
-    <ion-list-header color= "tertiary">
+    <ion-list-header color= "secundary">
       <ion-label>Lista de usuarios aleatorios</ion-label>
     </ion-list-header>
-    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'usuarios', item.id]"></ion-item>
-    <ion-button (click)="getUserList()" >Actualizar</ion-button>
-    <ion-item *ngFor= "let x of userList;let i=index" >
+  
+    
+    <ion-item *ngFor= "let x of userList;let i=index"[routerLink]="['/', 'usuarios', x.id]" >
+     
       <ion-avatar>
         <img [src]="x.picture.large">
   
