@@ -21,10 +21,10 @@
     </ion-list-header>
   
     
-    <ion-item *ngFor= "let x of userList;let i=index"[routerLink]="['/', 'usuarios', x.id]" >
+    <ion-item *ngFor= "let x of userList;let i=index"  [routerLink]="['/', 'usuarios', i ]" >
      
       <ion-avatar>
-        <img [src]="x.picture.large">
+        <img [src]="x.picture.medium">
   
       </ion-avatar>
       <ion-label>
